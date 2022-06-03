@@ -1,0 +1,36 @@
+.products_table{
+    background-color: var(--white);
+    padding: 10px 20px;
+    overflow: auto;
+    height: 100%;
+    position: relative;
+}
+.actionButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.actionButtons button{
+    width: 100%;
+}
+.update_product_modal_footer,.add_product_modal_footer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.update_product_modal_footer button,.add_product_modal_footer button{
+    width: 100%;
+}
+.add_product_btn{
+    bottom: 0px;
+    left: 0px;
+    position: sticky;
+}
+@media screen and (max-width: 540px){
+    .dataTable td{
+        white-space: nowrap;
+        font-size: 12px;
+    }
+}

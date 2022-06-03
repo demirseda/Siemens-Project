@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SShop | Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/products.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/views.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <button class="btn-icon" id="change_menu_state"><i class="bx bx-menu"></i></button>
+        <h1 class="pageTitle">Products</h1>
+        <a href="/profile.html" class="btn user_profile"><i class="bx bx-user"></i></a>
+      </header>
+      <nav class="left_bar">
+        <div class="logo"></div>
+        <div class="nav_list">
+          <a href="/dashboard.html" class="nav_list_item ">
+            <i class="bx bxs-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/products.html" class="nav_list_item active">
+            <i class="bx bxs-box"></i>
+            <span>Products</span>
+          </a>
+          <a href="/schedule.html" class="nav_list_item ">
+            <i class="bx bxs-calendar"></i>
+            <span>Schedule</span>
+          </a>
+          <a href="/profile.html" class="nav_list_item ">
+            <i class="bx bxs-user"></i>
+            <span>Profile</span>
+          </a>
+
+        </div>
+        <a href="/index.html" class="btn btn-fill logout_btn" id="#logout">
+          <i class="bx bx-log-in"></i>
+          <span>Log out</span>
+        </a>
+      </nav>
+      <section>
+        <div class="products_table">
+        <table id="example" class="ui celled table" style="width:100%">
+        </table>
+        <button class="btn btn-fill add_product_btn">Add New Product</button>
+        </div>
+
+  
+      </section>
+    </div>
+    <script src="assets/scripts/base.js"></script>
+    <script>
+      $(document).ready(function () {
+        SIEMENSSHOP.init();
+      });
+    </script>
+</body>
+</html>

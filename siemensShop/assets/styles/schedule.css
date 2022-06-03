@@ -1,0 +1,205 @@
+.hbContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.calendar_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--white);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.calendar {
+    flex: 1 1 75%;
+    padding: var(--page-space);
+}
+
+.calendar_controller {
+    flex: 1 1 25%;
+    box-shadow: -2px 0 5px var(--g20);
+    height: 100%;
+    padding: var(--page-space);
+    display: flex;
+    flex-direction: column;
+    gap: var(--page-space);
+}
+.calendar_year_month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: var(--page-space);
+}
+
+
+.calendar_year_month div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: var(--g05);
+    color: var(--primary);
+    border-radius: var(--def-radius);
+    height: 40px;
+}
+
+.calendar_list_wrapper{
+    flex-grow: 1;
+    height: 100%;
+}
+
+.calendar_list_names {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 40px);
+    align-items: center;
+    justify-items: center;
+    grid-gap: 8px;
+    font-size: 14px;
+    color: var(--g50);
+}
+
+.calendar_list_days {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, minmax(20px,100%));
+    align-items: center;
+    justify-items: center;
+    grid-gap: 8px;
+    color: var(--g90);
+    height: 100%;
+    font: var(--pb300);
+}
+.calendar_list_days li {
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s ease all;
+    border-radius: var(--def-radius);
+    position: relative;
+}
+.calendar_list_days li.disabled{
+    color: var(--g40);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.calendar_list_days li:hover,.calendar_list_days:focus-visible{
+    background-color: var(--primary);
+    color:var(--white);
+}
+.calendar_list_days li.selected{
+    background-color: var(--primary);
+    color:var(--white);
+}
+.calendar_list_days li div{
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    opacity: 0;
+    pointer-events: none;
+}
+.calendar_list_days li div button {
+    position: absolute;
+    top: 40px;
+    background-color: var(--primary);
+    width: 40px;
+    opacity: 0;
+    transition: .5s ease all;
+}
+.calendar_list_days li button.showEvent{
+    left: 0;
+    top: 0;
+    opacity: 1;
+}
+.calendar_list_days li button.deleteEvent{
+    right: 0;
+    top: 0;
+    opacity: 1;
+}
+.calendar_list_days li.scheduled:hover div{
+    opacity: 1;
+    pointer-events: unset;
+}
+.scheduled{
+    color:var(--white);
+    background-color: var(--g40);
+}
+
+.scheduled.top {
+    background-color: var(--error) !important;
+}
+.scheduled.medium {
+    background-color: var(--warning) !important;
+}
+.scheduled.low {
+    background-color: var(--success) !important;
+}
+.scheduled:hover{
+    background-color: var(--white)!important;
+    border: 1px solid var(--primary);
+    color:var(--primary)!important;
+}
+.calBtn {
+    user-select: none;
+    cursor: pointer;
+    background: var(--primary);
+    margin: 8px 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 22px;
+    color: var(--white);
+    border: 1px solid var(--primary);
+}
+.choose_event_priority{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.choose_event_priority input[type="radio"]{
+    width: 24px;
+    height: 24px;
+    accent-color: var(--primary);
+}
+.priority_box {
+    display: flex;
+    align-items: center;
+    gap: var(--page-space);
+}
+@media screen and (max-width: 540px) {
+    .calendar_list_names {
+
+        grid-gap: 1px;
+        font-size: 10px;
+    }
+    .calendar_list_days li {
+        width: 15px;
+        height: 15px;
+
+        font-size: 10px;
+    }
+    .calendar_list_days {
+        grid-gap: 1px;
+        font: var(--pb300);
+        font-size:10px
+    }
+    .priority_box{
+        gap: calc(var(--page-space) / 2);
+        font-size: 10px;
+    }
+}

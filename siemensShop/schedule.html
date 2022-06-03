@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SShop | Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/views.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/schedule.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <button class="btn-icon" id="change_menu_state"><i class="bx bx-menu"></i></button>
+        <h1 class="pageTitle">Schedule</h1>
+        <a href="/profile.html" class="btn user_profile"><i class="bx bx-user"></i></a>
+      </header>
+      <nav class="left_bar">
+        <div class="logo"></div>
+        <div class="nav_list">
+          <a href="/dashboard.html" class="nav_list_item ">
+            <i class="bx bxs-dashboard"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="/products.html" class="nav_list_item">
+            <i class="bx bxs-box"></i>
+            <span>Products</span>
+          </a>
+          <a href="/schedule.html" class="nav_list_item active">
+            <i class="bx bxs-calendar"></i>
+            <span>Schedule</span>
+          </a>
+          <a href="/profile.html" class="nav_list_item ">
+            <i class="bx bxs-user"></i>
+            <span>Profile</span>
+          </a>
+
+        </div>
+        <a href="/index.html" class="btn btn-fill logout_btn" id="#logout">
+          <i class="bx bx-log-in"></i>
+          <span>Log out</span>
+        </a>
+      </nav>
+      <section>
+          <div class="calendar_wrapper">
+            <div class="calendar">
+                <div class="hbContainer">
+                <div class="calendar_year_month">
+                    <p class="calBtn" onclick="prevMonth()"> Prev </p>
+                    <div id="year_month"> </div>
+                    <p class="calBtn" onclick="nextMonth()"> Next </p>
+                </div>
+                <div class="calendar_list_wrapper">
+                    <ol class="calendar_list_names">
+                    <li class="day_name">Sat</li>
+                    <li class="day_name">Sun</li>
+                    <li class="day_name">Mon</li>
+                    <li class="day_name">Tue</li>
+                    <li class="day_name">Wed</li>
+                    <li class="day_name">Thu</li>
+                    <li class="day_name">Fri</li>
+                    </ol>
+                    <ol class="calendar_list_days" id="calendarList">
+                    </ol>
+                </div>
+                </div>
+            </div> 
+            <div class="calendar_controller">
+              <div class="input_wrapper">
+                <label for="event_date">Event Date</label>
+                <input type="text" id="event_date" name="event_date" />
+              </div>
+                <div class="input_wrapper">
+                    <label for="event_name">Event Name</label>
+                    <input type="text" id="event_name" name="event_name" />
+                </div>
+                <div class="input_wrapper">
+                    <label for="event_description">Event Description</label>
+                    <textarea type="text" id="event_description" name="event_description" rows="10"></textarea>
+                </div>
+                <div class="input_wrapper">
+                    <label for="event_type">Event Type</label>
+                    <input type="text" id="event_type" name="event_type" />
+                </div>
+                <div class="input_wrapper">
+                  <label for="event_priority">Event Priority</label>
+                  <div class="choose_event_priority">
+                    <div class="priority_box">
+                      <input type="radio" id="top" name="event_priority" value="top" disabled>
+                      <label for="top">Top</label>
+                    </div>
+                    <div class="priority_box">
+                      <input type="radio" id="medium" name="event_priority" value="medium" disabled>
+                      <label for="medium">Medium</label>
+                    </div>
+                    <div class="priority_box">
+                      <input type="radio" id="low" name="event_priority" value="low" disabled>
+                      <label for="low">Low</label>
+                    </div>
+                  </div>
+                  <!--<input type="text" id="event_priority" name="event_priority" />-->
+              </div>
+                <button class="btn btn-fill w-100 w-40 schedule_btn btn-fill-disabled" disabled>Schedule</button>
+            </div>
+        </div>
+      </section>
+    </div>
+    <script src="assets/scripts/base.js"></script>
+    <script src="assets/scripts/calendar.js"></script>
+    <script>
+      $(document).ready(function () {
+        SIEMENSSHOP.init();
+      });
+      </script>
+</body>
+</html>
